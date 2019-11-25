@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ movie.title }}</h1>
+  <div class="poster">
+    <img src="{{ MEDIA_URL }}{{ movie.poster }}" alt="My image"></a>
+  </div>
+
+  Price: {{ movie.adult_price }}
+  <div>
+    <button class="disabled">Comment</button>
+  </div>
+
+
+  {% include 'orders/create_order.html' %}
+
+{% endblock %}

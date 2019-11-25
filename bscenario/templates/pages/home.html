@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+  <h3 class="py-3">NOW PLAYING</h3>
+  {% for movie in movies %}
+    <div class="poster">
+      <a href="{% url 'movies:detail' movie.pk %}">
+      <img src="{{ MEDIA_URL }}{{ movie.poster }}" alt="My image"></a>
+      </a>
+    </div>
+    {{ movie }}
+    Price: {{ movie.price }}
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if orders %}
+    <h3>Orders</h3>
+    {% for order in orders %}
+      <div class="order border">
+        {{ order.movie.title }} {{ order.total_price }} {{ order.get_status_display }}
+      <a href="{% url 'orders:detail' order.pk %}">order detail</a>
+
+      {% if order.status == order.OPEN %}
+        <div>
+          <a href="{% url 'orders:cancel' order.pk %}">cancel order</a>
+        </div>
+        <div>
+          <a href="{% url 'orders:complete' order.pk %}">complete order</a>
+        </div>
+      {% endif %}
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>You don't have any orders now.</p>
+  {% endif %}
+
+{% endblock %}

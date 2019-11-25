@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Order detail:</h2>
+  {{ order.movie.title }}<br>
+  {{ order.created }}<br>
+  {{ order.session }}<br>
+  {{ order.adult_counts }}<br>
+  {{ order.student_counts }}<br>
+  {{ order.child_counts }}<br>
+  {{ order.total_price }}<br>
+  {{ order.status }}<br>
+{% endblock %}
