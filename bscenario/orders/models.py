@@ -1,7 +1,15 @@
 from abc import ABC, abstractmethod
 from django.db import models
 from django.contrib.auth import get_user_model
+<<<<<<< HEAD
 from ..movies.models import Movie, Session, Cinema
+=======
+<<<<<<< HEAD
+from ..movies.models import Movie, Session, Cinema
+=======
+from ..movies.models import Movie, Session
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
+>>>>>>> 6a246fab5a70703ca261e8ccae458db63a17ccde
 
 
 class Order(models.Model):
@@ -33,13 +41,23 @@ class Order(models.Model):
     child_counts = models.PositiveIntegerField()
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default=OPEN)
+<<<<<<< HEAD
     cinema = models.ForeignKey(Cinema, on_delete=models.CASCADE)
+=======
+<<<<<<< HEAD
+    cinema = models.ForeignKey(Cinema, on_delete=models.CASCADE)
+=======
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
+>>>>>>> 6a246fab5a70703ca261e8ccae458db63a17ccde
 
     def total(self):
         return self.movie.adult_price * self.adult_counts + self.movie.student_price * self.student_counts + self.movie.child_price * self.child_counts
 
     promotion = None
+<<<<<<< HEAD
+=======
 
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
     def due(self):
         if self.promotion is None:
             discount = 0
@@ -48,7 +66,14 @@ class Order(models.Model):
         return float(self.total()) - discount
 
 
+<<<<<<< HEAD
 #strategy
+=======
+<<<<<<< HEAD
+#strategy
+=======
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
+>>>>>>> 6a246fab5a70703ca261e8ccae458db63a17ccde
 class Promotion(ABC):
 
     @abstractmethod

@@ -2,12 +2,33 @@
 
 {% block content %}
   {% if orders %}
+<<<<<<< HEAD
+    <h3 class="py-3">Orders</h3>
+=======
+<<<<<<< HEAD
     <h3 class="py-3">Orders</h3>
     {% for order in orders %}
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
           <a href="{% url 'orders:detail' order.pk %}">{{ forloop.counter }}. {{ order.movie.title }}</a>, {{ order.total_price }}, {{ order.get_status_display }},
 
+          {% if order.status == order.OPEN %}
+              <a href="{% url 'orders:cancel' order.pk %}" class="btn btn-primary">cancel order</a>
+              <a href="{% url 'orders:complete' order.pk %}" class="btn btn-primary">complete order</a>
+              <a href="{% url 'movies:print-ticket' order.pk %}" class="btn btn-primary">print ticket</a>
+          {% endif %}
+
+        </li>
+      </ul>
+=======
+    <h3>Orders</h3>
+>>>>>>> 6a246fab5a70703ca261e8ccae458db63a17ccde
+    {% for order in orders %}
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <a href="{% url 'orders:detail' order.pk %}">{{ forloop.counter }}. {{ order.movie.title }}</a>, {{ order.total_price }}, {{ order.get_status_display }},
+
+<<<<<<< HEAD
           {% if order.status == order.OPEN %}
               <a href="{% url 'orders:cancel' order.pk %}" class="btn btn-primary">Cancel order</a>
               <a href="{% url 'orders:complete' order.pk %}" class="btn btn-primary">Payment</a>
@@ -16,10 +37,29 @@
 
         </li>
       </ul>
+=======
+      {% if order.status == order.OPEN %}
+        <div>
+          <a href="{% url 'orders:cancel' order.pk %}">cancel order</a>
+        </div>
+        <div>
+          <a href="{% url 'orders:complete' order.pk %}">complete order</a>
+        </div>
+      {% endif %}
+      </div>
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
+>>>>>>> 6a246fab5a70703ca261e8ccae458db63a17ccde
     {% endfor %}
   {% else %}
     <p>You don't have any orders now.</p>
   {% endif %}
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
+>>>>>>> 6a246fab5a70703ca261e8ccae458db63a17ccde
 {% endblock %}

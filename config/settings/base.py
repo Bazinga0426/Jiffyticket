@@ -43,7 +43,15 @@ LOCALE_PATHS = [ROOT_DIR.path("locale")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
+<<<<<<< HEAD
+    "default": env.db("DATABASE_URL", default="mysql://root:Alisa123.@127.0.0.1:3306/scenario")
+=======
     "default": env.db("DATABASE_URL", default="mysql://root:980426@127.0.0.1:3306/cs4125")
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
+>>>>>>> 6a246fab5a70703ca261e8ccae458db63a17ccde
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
