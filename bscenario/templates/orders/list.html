@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if orders %}
+    <h3 class="py-3">Orders</h3>
+    {% for order in orders %}
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <a href="{% url 'orders:detail' order.pk %}">{{ forloop.counter }}. {{ order.movie.title }}</a>, {{ order.total_price }}, {{ order.get_status_display }},
+
+          {% if order.status == order.OPEN %}
+              <a href="{% url 'orders:cancel' order.pk %}" class="btn btn-primary">cancel order</a>
+              <a href="{% url 'orders:complete' order.pk %}" class="btn btn-primary">complete order</a>
+              <a href="{% url 'movies:print-ticket' order.pk %}" class="btn btn-primary">print ticket</a>
+          {% endif %}
+
+        </li>
+      </ul>
+    {% endfor %}
+  {% else %}
+    <p>You don't have any orders now.</p>
+  {% endif %}
+
+
+{% endblock %}
