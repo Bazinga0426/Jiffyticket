@@ -1,13 +1,38 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Order detail:</h2>
-  {{ order.movie.title }}<br>
-  {{ order.created }}<br>
-  {{ order.session }}<br>
-  {{ order.adult_counts }}<br>
-  {{ order.student_counts }}<br>
-  {{ order.child_counts }}<br>
-  {{ order.total_price }}<br>
-  {{ order.status }}<br>
+  <h2 class="py-4">Order detail</h2>
+
+
+  <table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Movie</th>
+      <th scope="col">{{ order.movie.title }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Date</th>
+      <td>{{ order.created }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Cinema</th>
+      <td>{{ order.cinema }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Session</th>
+      <td>{{ order.session }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Total Price</th>
+      <td>{{ order.total_price }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Status</th>
+      <td>{{ order.status }}</td>
+    </tr>
+
+  </tbody>
+</table>
 {% endblock %}

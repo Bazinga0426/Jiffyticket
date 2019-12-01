@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Movie, Person, Session
+from .models import Movie, Person, Session, Cinema
 
 
 class SessionInline(admin.TabularInline):
@@ -14,3 +14,4 @@ class MovieAdmin(admin.ModelAdmin):
 
 admin.site.register(Movie, MovieAdmin)
 admin.site.register(Person)
+admin.site.register(Cinema)

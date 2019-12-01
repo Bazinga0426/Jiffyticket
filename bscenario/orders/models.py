@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from django.db import models
 from django.contrib.auth import get_user_model
-from ..movies.models import Movie, Session
+from ..movies.models import Movie, Session, Cinema
 
 
 class Order(models.Model):
@@ -33,6 +33,7 @@ class Order(models.Model):
     child_counts = models.PositiveIntegerField()
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default=OPEN)
+    cinema = models.ForeignKey(Cinema, on_delete=models.CASCADE)
 
     def total(self):
         return self.movie.adult_price * self.adult_counts + self.movie.student_price * self.student_counts + self.movie.child_price * self.child_counts
@@ -47,6 +48,7 @@ class Order(models.Model):
         return float(self.total()) - discount
 
 
+#strategy
 class Promotion(ABC):
 
     @abstractmethod

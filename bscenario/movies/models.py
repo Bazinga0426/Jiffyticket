@@ -8,6 +8,15 @@ class Person(models.Model):
         return self.first_name
 
 
+class Cinema(models.Model):
+    city = models.CharField(max_length=20)
+    name = models.CharField(max_length=30)
+    location = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+
 class Movie(models.Model):
     title = models.CharField(max_length=20)
     desp = models.TextField()
@@ -21,9 +30,37 @@ class Movie(models.Model):
     adult_price = models.DecimalField(max_digits=10, decimal_places=2)
     child_price = models.DecimalField(max_digits=10, decimal_places=2)
     student_price = models.DecimalField(max_digits=10, decimal_places=2)
+    cinema = models.ManyToManyField(Cinema)
+
+    # def __init__(self, price, *args, **kwargs):
+    #     super(Movie, self).__init__(self, *args, **kwargs)
+    #     self.price = price
+
+    def get_charge(self):
+        return self.price.get_charge()
 
     def __str__(self):
         return self.title
+
+
+class Price:
+    def get_charge(self):
+        pass
+
+
+class AdultPrice(Price):
+    def get_charge(self):
+        return 88
+
+
+class ChildrensPrice(Price):
+    def get_charge(self):
+        return 22
+
+
+class StudentPrice(Price):
+    def get_charge(self):
+        return 44
 
 
 class Session(models.Model):

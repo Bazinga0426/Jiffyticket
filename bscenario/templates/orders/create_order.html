@@ -3,5 +3,11 @@
 <form method="post" novalidate action="">
   {% csrf_token %}
   {{ form|crispy }}
-  <button type="submit" class="btn btn-success">Save order</button>
+
+  {% if user.is_authenticated %}
+
+    <button type="submit" class="btn btn-success">Save order</button>
+  {% else %}
+    <a class="btn btn-success" href="{% url 'account_login' %}">Login to buy tickets</a>
+  {% endif %}
 </form>

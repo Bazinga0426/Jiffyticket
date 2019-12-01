@@ -44,7 +44,6 @@ LOCALE_PATHS = [ROOT_DIR.path("locale")]
 
 DATABASES = {
     "default": env.db("DATABASE_URL", default="mysql://root:980426@127.0.0.1:3306/cs4125")
-
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 

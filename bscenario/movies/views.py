@@ -11,6 +11,7 @@ def index(request):
 
 def detail(request, mid):
     movie = get_object_or_404(Movie, pk=mid)
+    cinemas = movie.cinema.all()
 
     if request.method == 'POST':
         form = OrderModelForm(request.POST)
@@ -20,6 +21,7 @@ def detail(request, mid):
             order.movie = movie
 
             #total price and promotion
+            #strategy
             total_count = order.adult_counts + order.student_counts + order.child_counts
             if total_count >= 10:
                 promo = TenPromo
@@ -35,4 +37,21 @@ def detail(request, mid):
     else:
         form = OrderModelForm()
 
-    return render(request, 'movies/detail.html', {'movie': movie, 'form': form})
+    return render(request, 'movies/detail.html', {'movie': movie, 'form': form, 'cinemas': cinemas})
+
+
+#factory
+def print_ticket(request, order_id):
+    from ..tickets.models import get_ticket_creator
+    ticket = get_ticket_creator()
+
+    return render(request, 'movies/print_ticket.html', {'ticket': ticket.print()})
+
+
+def add_to_wishlist(request):
+    return render(request, 'movies/add_to_wishlist_done.html')
+
+
+def top_rank_movies(request):
+    movie = Movie.objects.all()
+    return render(request, 'movies/top_rank_movies.html', {'tops': movie})

@@ -14,7 +14,7 @@ class ChildrenTicketCreator:
         return 'children ticket'
 
 
-def get_ticket_creator(type="Adult"):
+def get_ticket_creator(type ="Adult"):
     """Factory"""
     creators = {
         "Adult": AdultTicketCreator,
