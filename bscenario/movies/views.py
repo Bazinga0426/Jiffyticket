@@ -11,7 +11,10 @@ def index(request):
 
 def detail(request, mid):
     movie = get_object_or_404(Movie, pk=mid)
+<<<<<<< HEAD
     cinemas = movie.cinema.all()
+=======
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
 
     if request.method == 'POST':
         form = OrderModelForm(request.POST)
@@ -21,7 +24,10 @@ def detail(request, mid):
             order.movie = movie
 
             #total price and promotion
+<<<<<<< HEAD
             #strategy
+=======
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
             total_count = order.adult_counts + order.student_counts + order.child_counts
             if total_count >= 10:
                 promo = TenPromo
@@ -37,6 +43,7 @@ def detail(request, mid):
     else:
         form = OrderModelForm()
 
+<<<<<<< HEAD
     return render(request, 'movies/detail.html', {'movie': movie, 'form': form, 'cinemas': cinemas})
 
 
@@ -55,3 +62,6 @@ def add_to_wishlist(request):
 def top_rank_movies(request):
     movie = Movie.objects.all()
     return render(request, 'movies/top_rank_movies.html', {'tops': movie})
+=======
+    return render(request, 'movies/detail.html', {'movie': movie, 'form': form})
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705

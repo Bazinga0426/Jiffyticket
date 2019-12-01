@@ -12,6 +12,7 @@
     <option name="IS_MODULE_SDK" value="true" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
+<<<<<<< HEAD
     <PathMappingSettings>
       <option name="pathMappings">
         <list>
@@ -21,12 +22,22 @@
     </PathMappingSettings>
     <option name="launchJavascriptDebuger" value="false" />
     <option name="host" value="" />
+=======
+    <option name="launchJavascriptDebuger" value="false" />
+    <option name="host" value="127.0.0.1" />
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
     <option name="additionalOptions" value="" />
     <option name="browserUrl" value="" />
     <option name="runTestServer" value="false" />
     <option name="runNoReload" value="false" />
     <option name="useCustomRunCommand" value="true" />
     <option name="customRunCommand" value="migrate" />
+<<<<<<< HEAD
     <method />
   </configuration>
 </component>
+=======
+    <method v="2" />
+  </configuration>
+</component>
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705

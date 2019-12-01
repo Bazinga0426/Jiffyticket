@@ -2,6 +2,7 @@
 
 {% block content %}
   {% if orders %}
+<<<<<<< HEAD
     <h3 class="py-3">Orders</h3>
     {% for order in orders %}
       <ul class="list-group list-group-flush">
@@ -16,10 +17,30 @@
 
         </li>
       </ul>
+=======
+    <h3>Orders</h3>
+    {% for order in orders %}
+      <div class="order border">
+        {{ order.movie.title }} {{ order.total_price }} {{ order.get_status_display }}
+      <a href="{% url 'orders:detail' order.pk %}">order detail</a>
+
+      {% if order.status == order.OPEN %}
+        <div>
+          <a href="{% url 'orders:cancel' order.pk %}">cancel order</a>
+        </div>
+        <div>
+          <a href="{% url 'orders:complete' order.pk %}">complete order</a>
+        </div>
+      {% endif %}
+      </div>
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
     {% endfor %}
   {% else %}
     <p>You don't have any orders now.</p>
   {% endif %}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
 {% endblock %}

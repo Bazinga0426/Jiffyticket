@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<<<<<<< HEAD
 
   <div class="row py-5">
     <div class="col">
@@ -43,5 +44,19 @@
 
   {% include 'orders/create_order.html' %}
 
+=======
+  <h1>{{ movie.title }}</h1>
+  <div class="poster">
+    <img src="{{ MEDIA_URL }}{{ movie.poster }}" alt="My image"></a>
+  </div>
+
+  Price: {{ movie.adult_price }}
+  <div>
+    <button class="disabled">Comment</button>
+  </div>
+
+
+  {% include 'orders/create_order.html' %}
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
 
 {% endblock %}

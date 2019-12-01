@@ -34,7 +34,11 @@
 
   <body>
 
+<<<<<<< HEAD
     <div class="mb-1" style="background-color: #FDB73B">
+=======
+    <div class="mb-1">
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
       <nav class="navbar navbar-expand-md navbar-light bg-light">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -47,9 +51,12 @@
               <a class="nav-link" href="{% url 'home' %}">Movies <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
+<<<<<<< HEAD
               <a class="nav-link" href="{% url 'movies:top-rank-movies' %}">Top rank movies</a>
             </li>
             <li class="nav-item">
+=======
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
               <a class="nav-link" href="{% url 'orders:list' %}">Orders</a>
             </li>
             {% if request.user.is_authenticated %}

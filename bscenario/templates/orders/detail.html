@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<<<<<<< HEAD
   <h2 class="py-4">Order detail</h2>
 
 
@@ -35,4 +36,15 @@
 
   </tbody>
 </table>
+=======
+  <h2>Order detail:</h2>
+  {{ order.movie.title }}<br>
+  {{ order.created }}<br>
+  {{ order.session }}<br>
+  {{ order.adult_counts }}<br>
+  {{ order.student_counts }}<br>
+  {{ order.child_counts }}<br>
+  {{ order.total_price }}<br>
+  {{ order.status }}<br>
+>>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
 {% endblock %}
