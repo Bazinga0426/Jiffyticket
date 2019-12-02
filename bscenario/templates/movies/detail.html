@@ -1,57 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-  <div class="row py-5">
-    <div class="col">
-      <div class="poster">
-        <img src="{{ MEDIA_URL }}{{ movie.poster }}" alt="My image"></a>
-      </div>
-    </div>
-    <div class="col">
-      <h1>{{ movie }}</h1>
-      <div class="py-1">
-        <button type="button" class="btn btn-primary">Comment</button>
-      </div>
-      <div class="py-1">
-        <a class="btn btn-success" href="{% url 'movies:add-to-wishlist' %}">Add to Wishlist</a>
-      </div>
-      <div class="py-1">
-        <a class="btn btn-primary" href="#" role="button">one click order</a>
-      </div>
-      <div class="py-1">
-        <a class="btn btn-primary" href="#" role="button">membership</a>
-      </div>
-      {% if user.is_authenticated %}
-        <div class="py-1">
-        <a class="btn btn-primary" href="#" role="button">Top up</a>
-        </div>
-      {% endif %}
-
-    </div>
-
-  </div>
-
-
-
-
-
-
-  <div class="py-3">
-    <h6>Price: {{ movie.adult_price }}</h6>
-  </div>
-
-  {% include 'orders/create_order.html' %}
-
-=======
-  <h1>{{ movie.title }}</h1>
-  <div class="poster">
-    <img src="{{ MEDIA_URL }}{{ movie.poster }}" alt="My image"></a>
-  </div>
->>>>>>> 6a246fab5a70703ca261e8ccae458db63a17ccde
 
   <div class="row py-5">
     <div class="col">
@@ -93,7 +42,6 @@
   </div>
 
   {% include 'orders/create_order.html' %}
->>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
 
 
 {% endblock %}

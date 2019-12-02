@@ -14,15 +14,7 @@
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-<<<<<<< HEAD
     <orderEntry type="jdk" jdkName="Python 3.8 (bscenario)" jdkType="Python SDK" />
-=======
-<<<<<<< HEAD
-    <orderEntry type="jdk" jdkName="Python 3.6 (0919)" jdkType="Python SDK" />
-=======
-    <orderEntry type="jdk" jdkName="Python 3.8 (bscenario) (2)" jdkType="Python SDK" />
->>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
->>>>>>> 6a246fab5a70703ca261e8ccae458db63a17ccde
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PackageRequirementsSettings">

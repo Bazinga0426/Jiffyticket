@@ -8,10 +8,6 @@ class Person(models.Model):
         return self.first_name
 
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 6a246fab5a70703ca261e8ccae458db63a17ccde
 class Cinema(models.Model):
     city = models.CharField(max_length=20)
     name = models.CharField(max_length=30)
@@ -21,11 +17,6 @@ class Cinema(models.Model):
         return self.name
 
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
->>>>>>> 6a246fab5a70703ca261e8ccae458db63a17ccde
 class Movie(models.Model):
     title = models.CharField(max_length=20)
     desp = models.TextField()
@@ -39,32 +30,17 @@ class Movie(models.Model):
     adult_price = models.DecimalField(max_digits=10, decimal_places=2)
     child_price = models.DecimalField(max_digits=10, decimal_places=2)
     student_price = models.DecimalField(max_digits=10, decimal_places=2)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 6a246fab5a70703ca261e8ccae458db63a17ccde
     cinema = models.ManyToManyField(Cinema)
+    ticket_count = models.PositiveIntegerField(default=40)
 
-    # def __init__(self, price, *args, **kwargs):
-    #     super(Movie, self).__init__(self, *args, **kwargs)
-    #     self.price = price
 
     def get_charge(self):
         return self.price.get_charge()
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
->>>>>>> 6a246fab5a70703ca261e8ccae458db63a17ccde
 
     def __str__(self):
         return self.title
 
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 6a246fab5a70703ca261e8ccae458db63a17ccde
 class Price:
     def get_charge(self):
         pass
@@ -85,11 +61,6 @@ class StudentPrice(Price):
         return 44
 
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
->>>>>>> 6a246fab5a70703ca261e8ccae458db63a17ccde
 class Session(models.Model):
     start = models.DateTimeField()
     end = models.DateTimeField()
@@ -97,3 +68,9 @@ class Session(models.Model):
 
     def __str__(self):
         return f"{self.start} - {self.end}"
+
+
+class Constrain:
+
+    def check(self):
+        pass

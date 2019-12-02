@@ -1,3 +1,6 @@
+from ..orders.models import Movie
+
+
 #factory
 class AdultTicketCreator:
     def print(self):
@@ -6,11 +9,7 @@ class AdultTicketCreator:
 
 class StudentTicketCreator:
     def print(self):
-<<<<<<< HEAD
-        return 'stuent ticket'
-=======
         return 'student ticket'
->>>>>>> 9e597fcfa65022848a2577d8cb93fd7fb9f9f705
 
 
 class ChildrenTicketCreator:
