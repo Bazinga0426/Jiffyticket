@@ -9,9 +9,9 @@
           <a href="{% url 'orders:detail' order.pk %}">{{ forloop.counter }}. {{ order.movie.title }}</a>, {{ order.total_price }}, {{ order.get_status_display }},
 
           {% if order.status == order.OPEN %}
-              <a href="{% url 'orders:cancel' order.pk %}" class="btn btn-primary">Cancel order</a>
-              <a href="{% url 'orders:complete' order.pk %}" class="btn btn-primary">Payment</a>
-              <a href="{% url 'movies:print-ticket' order.pk %}" class="btn btn-primary">Print ticket</a>
+              <a href="{% url 'orders:cancel' order.pk %}" class="btn btn-primary">cancel order</a>
+              <a href="{% url 'orders:complete' order.pk %}" class="btn btn-primary">complete order</a>
+              <a href="{% url 'movies:print-ticket' order.pk %}" class="btn btn-primary">print ticket</a>
           {% endif %}
 
         </li>

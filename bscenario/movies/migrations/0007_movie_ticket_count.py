@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='movie',
             name='ticket_count',
-            field=models.PositiveIntegerField(default=40),
+            field=models.PositiveIntegerField(default=45),
         ),
     ]

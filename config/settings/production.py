@@ -1,9 +1,5 @@
 from .base import *  # noqa
 from .base import env
-from django.conf import settings
-
-
-settings.configure()
 
 # GENERAL
 # ------------------------------------------------------------------------------

@@ -50,7 +50,6 @@ class Order(models.Model):
 
 #strategy
 class Promotion(ABC):
-#Promotion interface
 
     @abstractmethod
     def discount(self, order):

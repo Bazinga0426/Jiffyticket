@@ -52,8 +52,12 @@ def detail(request, mid):
 
 #factory design pattern
 def print_ticket(request, order_id):
-    from ..tickets.models import get_ticket_creator
+    #observer design pattern
+    from ..tickets.models import get_ticket_creator, SendmailHandler
     ticket = get_ticket_creator()
+    handler = SendmailHandler()
+    ticket.attach(handler)
+    ticket.notify()
 
     return render(request, 'movies/print_ticket.html', {'ticket': ticket.print()})
 

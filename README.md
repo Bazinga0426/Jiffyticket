@@ -1,4 +1,4 @@
-## 安装依赖
+## Dependencies
 pip install -r requirements/local.txt
 
 

@@ -1,33 +1,39 @@
 from django.db import models
+from abc import ABC, abstractmethod
 
 
-#decorator design pattern
-class CinemaDetail:
+#Abstract Factory Method Pattern
+class CinemaDetail(ABC):
     """detail about cinema"""
-
+    @abstractmethod
     def __init__(self, description):
         self._description = description
+
+
+class FontCreator(CinemaDetail):
+    def __init__(self, cinemadetail):
+        self._cinmadetail = cinemadetail
 
     def add_style(self):
         return self._description
 
 
-class BoldDecorator(CinemaDetail):
+class BoldDecorator(FontCreator):
 
-    def __init__(self, cinemadetail):
-        self._cinemadetail = cinemadetail
-
-    def add_style(self):
-        return f"<b>{self._cinemadetail.add_style()}</b>"
-
-
-class ItalicDecorator(CinemaDetail):
-
-    def __init__(self, cinemadetail):
-        self._cinemadetail = cinemadetail
+    def __init__(self, fontcinema):
+        self._fontcinema = fontcinema
 
     def add_style(self):
-        return f"<i>{self._cinemadetail.add_style()}</i>"
+        return f"<b>{self._fontcinema.add_style()}</b>"
+
+
+class ItalicDecorator(FontCreator):
+
+    def __init__(self, fontcinema):
+        self._fontcinema = fontcinema
+
+    def add_style(self):
+        return f"<i>{self._fontcinema.add_style()}</i>"
 
 
 detail = BoldDecorator(CinemaDetail('Beijing cinema is good.')).add_style()
