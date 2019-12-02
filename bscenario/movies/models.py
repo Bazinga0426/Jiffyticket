@@ -33,7 +33,6 @@ class Movie(models.Model):
     cinema = models.ManyToManyField(Cinema)
     ticket_count = models.PositiveIntegerField(default=40)
 
-
     def get_charge(self):
         return self.price.get_charge()
 
@@ -41,6 +40,7 @@ class Movie(models.Model):
         return self.title
 
 
+#interface
 class Price:
     def get_charge(self):
         pass
@@ -74,3 +74,33 @@ class Constrain:
 
     def check(self):
         pass
+
+
+#decorator Design Pattern
+class Drink:
+
+    def __init__(self, drink):
+        self._drink = drink
+
+    def add(self):
+        return self._drink
+
+
+class AddPopcorn(Drink):
+    """Add Popcorn"""
+
+    def __init__(self, drink):
+        self._drink = drink
+
+    def add(self):
+        return f"{self._drink.add()}, add popcorn"
+
+
+class AddCoke(Drink):
+    """Add Coke"""
+
+    def __init__(self, drink):
+        self._drink = drink
+
+    def add(self):
+        return f"{self._drink.add()}, add coke"

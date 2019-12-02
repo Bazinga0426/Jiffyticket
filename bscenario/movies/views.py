@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponse, HttpResponseRedirect, reverse
-from .models import Movie
+from .models import Movie, AddPopcorn, AddCoke, Drink
 from ..orders.models import Order, FivePromo, TenPromo
 from ..orders.forms import OrderModelForm
 
@@ -33,7 +33,10 @@ def detail(request, mid):
             order.promotion = promo
             order.total_price = order.due()
 
-            #check pre condition
+            #decorator Design Pattern
+            order.drink = AddCoke(AddPopcorn(Drink("Tea")))
+
+            #check pre-condition
             if movie.ticket_count < total_count:
                 return HttpResponse('ticket not enough')
             else:
@@ -47,7 +50,7 @@ def detail(request, mid):
     return render(request, 'movies/detail.html', {'movie': movie, 'form': form, 'cinemas': cinemas})
 
 
-#factory
+#factory design pattern
 def print_ticket(request, order_id):
     from ..tickets.models import get_ticket_creator
     ticket = get_ticket_creator()
